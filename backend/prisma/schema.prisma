@@ -11,3 +11,56 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Material {
+  id           Int           @id @default(autoincrement())
+  text         String
+  publications Publication[]
+}
+
+model Publication {
+  id          Int      @id @default(autoincrement())
+  namePlatform String
+  publishedAt DateTime
+  finalText   String?
+
+  // Это число хранится в таблице Publication и указывает на Material.id.
+  materialId Int
+  // Через это поле Prisma получает материал, к которому относится публикация.
+  material   Material @relation(fields: [materialId], references: [id])
+
+  measurements StatisticalMeasurement[]
+  tags         PublicationTag[]
+}
+
+model StatisticalMeasurement {
+  id            Int      @id @default(autoincrement())
+  measuredAt    DateTime
+  likes         Int
+  comments      Int
+  reposts       Int
+  views         Int
+
+  // Каждый замер относится к одной публикации.
+  publicationId Int
+  publication   Publication @relation(fields: [publicationId], references: [id])
+}
+
+model Tag {
+  id           Int              @id @default(autoincrement())
+  name         String           @unique
+  publications PublicationTag[]
+}
+
+// Каждая строка связывает одну публикацию с одним тегом.
+model PublicationTag {
+  id            Int         @id @default(autoincrement())
+  publicationId Int
+  tagId         Int
+
+  publication Publication @relation(fields: [publicationId], references: [id], onDelete: Cascade)
+  tag         Tag         @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  // Не позволяет прикрепить один и тот же тег к публикации повторно.
+  @@unique([publicationId, tagId])
+}
