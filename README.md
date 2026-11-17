@@ -29,3 +29,23 @@ npm run dev
 ```
 
 Nuxt: `http://localhost:3000` · NestJS: `http://localhost:3001`.
+
+## API материалов
+
+- `GET /materials` — получить список материалов.
+- `POST /materials` — создать материал. Тело запроса: `{ "text": "Текст материала" }`.
+- `GET /materials/test` — тестовый маршрут для получения списка материалов.
+
+Например, после запуска NestJS можно создать материал:
+
+```bash
+curl -X POST http://localhost:3001/materials \
+  -H 'Content-Type: application/json' \
+  -d '{"text":"Мой первый материал"}'
+```
+
+Затем получить список:
+
+```bash
+curl http://localhost:3001/materials
+```
