@@ -12,6 +12,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="false" />
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -30,14 +37,16 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/material-create&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/nadoe/WebstormProjects/postle&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/nadoe/WebstormProjects/postle/backend/node_modules/prettier&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/nadoe/WebstormProjects/postle/backend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -59,10 +68,54 @@
       <workItem from="1794161684389" duration="2288000" />
       <workItem from="1794207773107" duration="568000" />
       <workItem from="1794334980588" duration="626000" />
+      <workItem from="1794564850625" duration="328000" />
+      <workItem from="1794565536231" duration="3379000" />
+      <workItem from="1794758666438" duration="4907000" />
+      <workItem from="1794842990179" duration="913000" />
+      <workItem from="1794852625933" duration="3518000" />
+      <workItem from="1794898066955" duration="8000" />
+      <workItem from="1794919220584" duration="98000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Tag.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Tag.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/PublicationTag.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Publication.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Material.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/PublicationTag.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Tag.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/PublicationTag.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/StatisticalMeasurement.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/StatisticalMeasurement.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Publication.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Material.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Publication.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/Material.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models/StatisticalMeasurement.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/enums.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/enums.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/client.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/client.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/commonInputTypes.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/client.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/enums.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/commonInputTypes.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/models.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/commonInputTypes.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/internal/class.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/internal/prismaNamespace.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/internal/prismaNamespace.js.map" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/internal/class.js" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/internal/prismaNamespace.d.ts" />
+        <option value="$PROJECT_DIR$/backend/generated/prisma/internal/class.js.map" />
+      </list>
+    </option>
   </component>
 </project>
