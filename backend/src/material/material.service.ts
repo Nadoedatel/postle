@@ -8,11 +8,25 @@ import { Prisma } from '../generated/prisma/client.js';
 export class MaterialService {
   constructor(private readonly prisma: PrismaService) {}
 
-  getMany() {
+  getMaterials() {
     return this.prisma.material.findMany();
   }
 
-  create(materialDto: CreateMaterialDto) {
+  async getMaterial(materialId: number) {
+    const material = await this.prisma.material.findUnique({
+      where: {
+        id: materialId,
+      },
+    });
+
+    if (material === null) {
+      throw new NotFoundException(`Материал с id ${materialId} не найден`);
+    }
+
+    return material;
+  }
+
+  createMaterial(materialDto: CreateMaterialDto) {
     return this.prisma.material.create({
       data: {
         text: materialDto.text,
@@ -20,7 +34,7 @@ export class MaterialService {
     });
   }
 
-  async update(materialId: number,materialDto: UpdateMaterialDto) {
+  async updateMaterial(materialId: number,materialDto: UpdateMaterialDto) {
     try {
        return await this.prisma.material.update({
         where: {
@@ -42,11 +56,22 @@ export class MaterialService {
     }
   }
 
-  delete(materialId: number) {
-    return this.prisma.material.delete({
-      where: {
-        id: materialId,
-      },
-    });
+  async deleteMaterial(materialId: number) {
+    try {
+      return await this.prisma.material.delete({
+        where: {
+          id: materialId,
+        },
+      });
+  } catch (error) {
+    if (
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      error.code === 'P2025'
+    ) {
+      throw new NotFoundException(`Не нашли этот id – ${materialId}`);
+    }
+
+    throw error;
+  }
   }
 }
