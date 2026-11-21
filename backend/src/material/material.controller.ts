@@ -7,28 +7,31 @@ import { UpdateMaterialDto } from './dto/update.material.dto.js';
 export class MaterialController {
   constructor(private readonly materialService: MaterialService) {}
 
-  @Get('test')
-  getManyTest() {
-    return this.materialService.getMany();
+  @Get()
+  getMaterials() {
+    return this.materialService.getMaterials();
+  }
+
+  @Get(':id')
+  getMaterial(@Param('id', ParseIntPipe) id: number) {
+    return this.materialService.getMaterial(id)
   }
 
   @Post()
-  create(@Body() createMaterialDto: CreateMaterialDto) {
-    return this.materialService.create(createMaterialDto);
+  createMaterial(@Body() createMaterialDto: CreateMaterialDto) {
+    return this.materialService.createMaterial(createMaterialDto);
   }
 
   @Put(':id')
-  update(
+  updateMaterial(
     @Param('id', ParseIntPipe) id: number,
     @Body() updateMaterialDto: UpdateMaterialDto
   ) {
-    return this.materialService.update(id, updateMaterialDto);
+    return this.materialService.updateMaterial(id, updateMaterialDto);
   }
 
   @Delete(':id')
-  delete(
-    @Param('id', ParseIntPipe) id: number,
-  ) {
-    return this.materialService.delete(id);
+  deleteMaterial(@Param('id', ParseIntPipe) id: number,) {
+    return this.materialService.deleteMaterial(id);
   }
 }
