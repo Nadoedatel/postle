@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
 import { MaterialService } from './material.service.js';
-import { CreateMaterialDto } from './dto/create.material.dto.js';
-import { UpdateMaterialDto } from './dto/update.material.dto.js';
+import { type CreateMaterialDto, createMaterialSchema } from './dto/create.material.dto.js';
+import { type UpdateMaterialDto, updateMaterialSchema } from './dto/update.material.dto.js';
 
 @Controller('materials')
 export class MaterialController {
@@ -18,14 +18,14 @@ export class MaterialController {
   }
 
   @Post()
-  createMaterial(@Body() createMaterialDto: CreateMaterialDto) {
+  createMaterial(@Body({ schema: createMaterialSchema }) createMaterialDto: CreateMaterialDto) {
     return this.materialService.createMaterial(createMaterialDto);
   }
 
   @Put(':id')
   updateMaterial(
     @Param('id', ParseIntPipe) id: number,
-    @Body() updateMaterialDto: UpdateMaterialDto
+    @Body({ schema: updateMaterialSchema }) updateMaterialDto: UpdateMaterialDto
   ) {
     return this.materialService.updateMaterial(id, updateMaterialDto);
   }
