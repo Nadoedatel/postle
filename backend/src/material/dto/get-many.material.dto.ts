@@ -1,7 +1,9 @@
-export class GetManyMaterialDto {
-  title: string;
+import { z } from 'zod';
 
-  text: string | null;
+export const getManyMaterialSchema = z.object({
+  title: z.string().trim().min(1).max(100),
+  text: z.string().trim().min(1).max(1000),
+  dateAt: z.date(),
+})
 
-  dateAt: Date;
-}
+export type GetManyMaterialDto = z.infer<typeof getManyMaterialSchema>
